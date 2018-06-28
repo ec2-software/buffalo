@@ -51,7 +51,7 @@ func App() *buffalo.App {
 
     {{ if .opts.AsAPI -}}
     // Set the request content type to JSON
-    app.Use(middleware.SetContentType("application/json"))
+    app.Use(middleware.AddContentType("application/json"))
     {{ end }}
 
     if ENV == "development" {
